@@ -9,16 +9,23 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <filter>
-  	<filter-name>Authentication</filter-name>
-  	<filter-class>com.agharibi.AuthenticationFilter</filter-class>
+    <filter-name>Authentication</filter-name>
+    <filter-class>com.agharibi.AuthenticationFilter</filter-class>
   </filter>
-  
   <filter-mapping>
-  	<filter-name>Authentication</filter-name>
-  	<url-pattern>/SecuredServlet</url-pattern>
+    <filter-name>Authentication</filter-name>
+    <url-pattern>/SecuredServlet</url-pattern>
   </filter-mapping>
   
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/ErrorHandlerServlet</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>401</error-code>
+  	<location>/ErrorHandlerServlet</location>
+  </error-page>
   
 </web-app>
